@@ -12,45 +12,39 @@ class Wallet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(240,240,240, 1),
+      appBar: AppBar(
+        shadowColor: Colors.transparent,
+        backgroundColor: Colors.transparent,
+        leadingWidth: 70,
+        leading: Padding(
+          padding: const EdgeInsets.fromLTRB(20.0,0,0,0),
+          child: CircleAvatar(
+            backgroundImage: AssetImage('asset/images/profile.png'),
+            radius: 30,
+          ),
+        ),
+        title: Text(
+          'Wallet',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Color.fromRGBO(36, 36, 36, 1),
+          ),
+        ),
+        centerTitle: true,
+        actions: [
+          HugeIcon(
+            icon: HugeIcons.strokeRoundedMoreVertical,
+            color: Colors.black,
+            size: 30.0,
+          ),
+          SizedBox(width: 20),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20.0,40,20,16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CircleAvatar(
-                    radius: 24,
-                    backgroundImage: AssetImage('asset/images/profile.png'),
-                  ),
-                  SizedBox(width: 16),
-                  Expanded(
-                    flex: 2,
-                    child: Text(
-                      'Wallet',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromRGBO(36, 36, 36, 1),
-                      ),
-                    ),
-                  ),
-                  IconButton(
-                    icon: HugeIcon(
-                      icon: HugeIcons.strokeRoundedMoreVertical,
-                      color: Colors.black,
-                      size: 30.0,
-                    ),
-                    onPressed: () {
-                      // Handle notification bell tap
-                    },
-                  ),
-
-                ],
-              ),
-            ),
             SizedBox(height: 20,),
             SizedBox(
               height: 190,

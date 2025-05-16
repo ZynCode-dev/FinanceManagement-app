@@ -9,63 +9,54 @@ class MyHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(240,240,240, 1),
+      appBar: AppBar(
+        shadowColor: Colors.transparent,
+        backgroundColor: Colors.transparent,
+        leadingWidth: 70,
+        leading: Padding(
+          padding: const EdgeInsets.fromLTRB(20.0,0,0,0),
+          child: CircleAvatar(
+            backgroundImage: AssetImage('asset/images/profile.png'),
+            radius: 30,
+          ),
+        ),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Good Morning!',
+              style: TextStyle(
+                fontSize: 16,
+                color: Color.fromRGBO(36, 36, 36, 1),
+              ),
+            ),
+            SizedBox(height: 4),
+            Text(
+              'C Cristiano Ronaldo',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Color.fromRGBO(36, 36, 36, 1),
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          Badge(
+            smallSize: 9,
+            alignment: Alignment(0.7, -0.7),
+            child: HugeIcon(
+              icon: HugeIcons.strokeRoundedNotification01,
+              color: Colors.black,
+              size: 30.0,
+            ),
+          ),
+          SizedBox(width: 20),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20.0,30,20,16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: Row(
-                      children: [
-                        CircleAvatar(
-                          radius: 24,
-                          backgroundImage: AssetImage('asset/images/profile.png'),
-                        ),
-                        SizedBox(width: 16),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Good Morning!',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Color.fromRGBO(36, 36, 36, 1),
-                              ),
-                            ),
-                            SizedBox(height: 4),
-                            Text(
-                              'C Cristiano Ronaldo',
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Color.fromRGBO(36, 36, 36, 1),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  IconButton(
-                    icon: Badge(
-                      smallSize: 9,
-                      alignment: Alignment(0.7, -0.7),
-                      child: HugeIcon(
-                        icon: HugeIcons.strokeRoundedNotification01,
-                        color: Colors.black,
-                        size: 30.0,
-                      ),
-                    ),
-                    onPressed: () {
-                      // Handle notification bell tap
-                    },
-                  ),
-                ],
-              ),
-            ),
             SizedBox(height: 20,),
             totalBalanceCard(),
             Container(
@@ -464,8 +455,6 @@ class MyHome extends StatelessWidget {
       ),
     );
   }
-
-
   Widget productCard(BuildContext context,String title,String price,Color clr,double prcnt) {
     return Container(
       width: MediaQuery.of(context).size.width*0.435,
@@ -519,7 +508,6 @@ class MyHome extends StatelessWidget {
       ),
     );
   }
-
   Widget subscriptionCard(String title,String suTitle,String price,Color priceColor, IconData icon,Color iconColor) {
     return Container(
       margin: EdgeInsets.only(left: 20,right: 20),

@@ -15,6 +15,7 @@ class Savings extends StatelessWidget {
       backgroundColor: Color.fromRGBO(240,240,240, 1),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        shadowColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
           onPressed: (){

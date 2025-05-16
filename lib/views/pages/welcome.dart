@@ -13,6 +13,7 @@ class Welcome extends StatelessWidget {
         padding: const EdgeInsets.all(18.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Stack(
               alignment: Alignment.center,
@@ -133,7 +134,7 @@ class Welcome extends StatelessWidget {
             Text(
               'Make Your Financial Management Easier',
               style: TextStyle(
-                  fontSize: 38,
+                  fontSize: 35,
                   color: Colors.white,
                   fontWeight: FontWeight.w600),
             ),
